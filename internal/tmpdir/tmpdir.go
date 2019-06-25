@@ -1,6 +1,7 @@
 package tmpdir
 
 import (
+	"github.com/sirupsen/logrus"
 	"os"
 	"runtime"
 )
@@ -25,5 +26,6 @@ func TemporaryDirectoryForBigFiles() string {
 	} else {
 		temporaryDirectoryForBigFiles = unixTempDirForBigFiles
 	}
+	logrus.Debugf("tmpdir: %s", temporaryDirectoryForBigFiles)
 	return temporaryDirectoryForBigFiles
 }
