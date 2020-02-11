@@ -235,6 +235,7 @@ func (d *Destination) PutManifest(ctx context.Context, m []byte, instanceDigest 
 	}
 
 	repoTags := []string{}
+	logrus.Debugf("PutManifest -> repoTags: %s", repoTags)
 	for _, tag := range d.repoTags {
 		// For github.com/docker/docker consumers, this works just as well as
 		//   refString := ref.String()
